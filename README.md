@@ -1,2 +1,3 @@
-# suivi-du-data-camp-datacamp_gmma
-suivi-du-data-camp-datacamp_gmma created by GitHub Classroom
+# DataCamp Guedj-Mardoc-Marcoux-Amoyal
+
+GitHub repository of Amoyal S., Guedj O., Mardoc E. and Marcoux Pépin T. team.
