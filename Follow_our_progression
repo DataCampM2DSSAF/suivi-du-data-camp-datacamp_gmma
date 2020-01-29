@@ -1,0 +1,27 @@
+First week :
+
+Objectives :
+	- discover the main ideas about the project 
+	- use new tools : GitHub, Kaggle
+	
+Because we are not really familiar with GitHub and Kaggle, one of the first thing was to start using them.
+Kaggle permits to find all the data for differents projects. Moreover, some notebooks are available and useful to show us different ideas to solve the problem.
+GitHub is useful to write code in a team, as each member can see the other codes, add his own code, and put other files, for instance a notebook where one can find explanations about the code, the subject, ...
+
+The data we have or about little games used by children to evaluate their skill. 
+The main objective is, according to these data, to evaluate as good they are by giving a mark in 0, 1, 2 or 3.
+
+
+Second week : 
+
+Objectives :
+	- understand data -> what is the target, what are the different files, ...
+	- divide tasks -> what each team member have to do
+	- first Kaggle submission -> at least one of us must submit a model
+	- set up Github -> make a clear difference between Readme, code and notebook
+	
+Because understanding data is more difficult than we thought at the first time, it is not so easy to still divide tasks.
+We started to submit something on Kaggle just to see how Kaggle works, what we have to put in it, ...
+Concerning the GitHub, we started to make the difference between Readme, code and notebook. However, some things are still not clear for us, so we will speak with our teacher next session.
+The main problem we get is to get the accuracy_group, which is the mark for each child. It seems to be a big problem for every team. The good point is that some teams already gave their advices and code in some notebooks, and we can use them to try to solve this problem.
+To get marks, we need to use words 'correct":true' or 'correct":false' for each game_session. These words are foud in 'event_data', a variable from the training and testing sets.
