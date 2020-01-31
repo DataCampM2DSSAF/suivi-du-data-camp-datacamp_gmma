@@ -25,3 +25,16 @@ We started to submit something on Kaggle just to see how Kaggle works, what we h
 Concerning the GitHub, we started to make the difference between Readme, code and notebook. However, some things are still not clear for us, so we will speak with our teacher next session.
 The main problem we get is to get the accuracy_group, which is the mark for each child. It seems to be a big problem for every team. The good point is that some teams already gave their advices and code in some notebooks, and we can use them to try to solve this problem.
 To get marks, we need to use words 'correct":true' or 'correct":false' for each game_session. These words are foud in 'event_data', a variable from the training and testing sets.
+
+
+Third week :
+
+Objectives :
+	- continue to understand how to get the accuracy in the train file
+	- each team member have to submit something on Kaggle
+	
+All of us have submit a random result on Kaggle. 
+We continue to understand the meaning of the the words 'correct":true' and 'correct":false'. 
+Indeed, they are not only used when someone fail or win a game, that is why to count the number of fails and wins by gam session, we have to filter the data not only by game session.
+It is the last problem we have to create a file in the asked format, e.g. a file such as train_labels.csv, where there is the game session id, the number of fails and wins, the accurac group, ...
+After creating this file, we will have to start writing an explanation of data files, main variables, ... and clean the data.
