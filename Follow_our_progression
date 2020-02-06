@@ -38,3 +38,15 @@ We continue to understand the meaning of the the words 'correct":true' and 'corr
 Indeed, they are not only used when someone fail or win a game, that is why to count the number of fails and wins by gam session, we have to filter the data not only by game session.
 It is the last problem we have to create a file in the asked format, e.g. a file such as train_labels.csv, where there is the game session id, the number of fails and wins, the accurac group, ...
 After creating this file, we will have to start writing an explanation of data files, main variables, ... and clean the data.
+
+
+Based on the isues primesly presented we wrote a function to build the labels in the train file. 
+We selected the lines where the event_code was 4100 or 4110: they correspond to the final events of game_session.
+Then we applied the groupby function to the event_session column.
+Finaly we counted the numbers of correct and incorrect attempts: the information is available in the event_data column: 
+if the string 'correct:true' is present  it's a success, if not it's a failure.
+
+Two main isues:
+	1.Into the lines with the 4100/4110 event_code there are still lines with no information about the results of the assesment in the event_data column.
+	2.We have to pedict on how many attemps every child will sucess an assignement. The issue is there are mny game_session for one installation_id.
+	Moreover, is this best to make the prediction for every account and every type of game ? 
