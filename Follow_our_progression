@@ -1,4 +1,6 @@
+""""""""""""
 First week :
+""""""""""""
 
 Objectives :
 	- discover the main ideas about the project 
@@ -11,8 +13,9 @@ GitHub is useful to write code in a team, as each member can see the other codes
 The data we have or about little games used by children to evaluate their skill. 
 The main objective is, according to these data, to evaluate as good they are by giving a mark in 0, 1, 2 or 3.
 
-
+"""""""""""""
 Second week : 
+"""""""""""""
 
 Objectives :
 	- understand data -> what is the target, what are the different files, ...
@@ -26,8 +29,9 @@ Concerning the GitHub, we started to make the difference between Readme, code an
 The main problem we get is to get the accuracy_group, which is the mark for each child. It seems to be a big problem for every team. The good point is that some teams already gave their advices and code in some notebooks, and we can use them to try to solve this problem.
 To get marks, we need to use words 'correct":true' or 'correct":false' for each game_session. These words are foud in 'event_data', a variable from the training and testing sets.
 
-
+""""""""""""
 Third week :
+""""""""""""
 
 Objectives :
 	- continue to understand how to get the accuracy in the train file
@@ -47,6 +51,38 @@ Finaly we counted the numbers of correct and incorrect attempts: the information
 if the string 'correct:true' is present  it's a success, if not it's a failure.
 
 Two main isues:
-	1.Into the lines with the 4100/4110 event_code there are still lines with no information about the results of the assesment in the event_data column.
-	2.We have to predict on how many attemps every child will sucess an assignement. The issue is there are many game_session for one installation_id.
+	1. Into the lines with the 4100/4110 event_code there are still lines with no information about the results of the assesment in the event_data column.
+	2. We have to predict on how many attemps every child will sucess an assignement. The issue is there are many game_session for one installation_id.
 	Moreover, is this best to make the prediction for every account and every type of game ? 
+
+"""""""""""""
+Fourth week :
+"""""""""""""
+
+Some answers/ideas:
+	1. We are are going to predict the accuracy by child AND by game.
+	2. Given that a child can play to a same game several time, his gameplay is very informative so we must take it into account for instance by using a mean or a 
+		median ...
+	3. We oberved that the id_installation in the test are not in the train. 
+		The main objective is to predict the accuracy of a given assesment knowing what the child did before the assement (clips or videos)
+
+Do not forget to:
+	To remove from the train the children wo never pass an assesement (for all the 5 games).
+
+To do list
+	1. Finishing the make_lables function and make sure it's usefull. I t seems to be important we have to precisly determine WHY.
+	2. Writing a first version of the part of the report on the data structure to make things clearer. 
+	3. Data vizualisation:
+		a. By games (distributions)
+		b. By children (profils)
+		c. Games + children over time
+		d. Check correlations between games ? Can we make groups of games basing on how children pass or not tha assesments in each game
+	4. Feature extraction: dealing with the information contained in the event_data
+
+Task assigned:
+ 	Samuel Amoyal : Feature extraction
+	Emile Mardoc : Writing part
+	Thomas Marcoux Pepin: Data Vizualisation
+	Odélia Guedj : The make_labels function
+
+
