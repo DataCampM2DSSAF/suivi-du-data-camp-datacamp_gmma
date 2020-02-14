@@ -48,5 +48,5 @@ if the string 'correct:true' is present  it's a success, if not it's a failure.
 
 Two main isues:
 	1.Into the lines with the 4100/4110 event_code there are still lines with no information about the results of the assesment in the event_data column.
-	2.We have to pedict on how many attemps every child will sucess an assignement. The issue is there are mny game_session for one installation_id.
+	2.We have to pedict on how many attemps every child will sucess an assignement. The issue is there are many game_session for one installation_id.
 	Moreover, is this best to make the prediction for every account and every type of game ? 
