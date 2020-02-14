@@ -1,30 +1,30 @@
-""""""""""""
+﻿""""""""""""
 First week :
 """"""""""""
 
 Objectives :
-	- discover the main ideas about the project 
-	- use new tools : GitHub, Kaggle
+	- Discover the main ideas about the project 
+	- Use new tools : GitHub, Kaggle
 	
 Because we are not really familiar with GitHub and Kaggle, one of the first thing was to start using them.
-Kaggle permits to find all the data for differents projects. Moreover, some notebooks are available and useful to show us different ideas to solve the problem.
-GitHub is useful to write code in a team, as each member can see the other codes, add his own code, and put other files, for instance a notebook where one can find explanations about the code, the subject, ...
+Kaggle allows us to use all the data online. Moreover, some notebooks are available and useful to show us different ideas to approach the problem.
+GitHub is useful to write code within a team, as each member can see the other's codes, add his own, add other files, for instance a notebook where one can find explanations about the code, the subject, ...
 
-The data we have or about little games used by children to evaluate their skill. 
-The main objective is, according to these data, to evaluate as good they are by giving a mark in 0, 1, 2 or 3.
+The data we have is about games used by children to evaluate their skill. 
+The main objective is, according to these data, to evaluate as good they are by giving them a mark in 0, 1, 2 or 3.
 
 """""""""""""
 Second week : 
 """""""""""""
 
 Objectives :
-	- understand data -> what is the target, what are the different files, ...
-	- divide tasks -> what each team member have to do
-	- first Kaggle submission -> at least one of us must submit a model
-	- set up Github -> make a clear difference between Readme, code and notebook
+	- Understand data -> what is the target, what are the different files, ...
+	- Divide tasks -> what each team member have to do
+	- First Kaggle submission -> at least one of us must submit a result
+	- Set up Github -> make a clear difference between Readme, code and notebook
 	
 Because understanding data is more difficult than we thought at the first time, it is not so easy to still divide tasks.
-We started to submit something on Kaggle just to see how Kaggle works, what we have to put in it, ...
+We started to submit something on Kaggle just to see how Kaggle works, what we have to put in it.
 Concerning the GitHub, we started to make the difference between Readme, code and notebook. However, some things are still not clear for us, so we will speak with our teacher next session.
 The main problem we get is to get the accuracy_group, which is the mark for each child. It seems to be a big problem for every team. The good point is that some teams already gave their advices and code in some notebooks, and we can use them to try to solve this problem.
 To get marks, we need to use words 'correct":true' or 'correct":false' for each game_session. These words are foud in 'event_data', a variable from the training and testing sets.
@@ -34,24 +34,24 @@ Third week :
 """"""""""""
 
 Objectives :
-	- continue to understand how to get the accuracy in the train file
-	- each team member have to submit something on Kaggle
+	- Continue to understand how to get the accuracy in the train file
+	- Each team member have to submit something on Kaggle
 	
 All of us have submit a random result on Kaggle. 
-We continue to understand the meaning of the the words 'correct":true' and 'correct":false'. 
-Indeed, they are not only used when someone fail or win a game, that is why to count the number of fails and wins by gam session, we have to filter the data not only by game session.
-It is the last problem we have to create a file in the asked format, e.g. a file such as train_labels.csv, where there is the game session id, the number of fails and wins, the accurac group, ...
+We kept to understand the meaning of the the words 'correct":true' and 'correct":false'. 
+Indeed, they are not only used when someone fail or win a game, that is why to count the number of fails and wins by game session, we have to filter the data by game session.
+It is the last problem we have to create a file in the asked format, e.g. a file such as train_labels.csv, where there is the game_session id, the number of fails and wins, the accuracy group, ...
 After creating this file, we will have to start writing an explanation of data files, main variables, ... and clean the data.
 
 
-Based on the isues primesly presented we wrote a function to build the labels in the train file. 
+Based on the issues previously presented, we wrote a function to build the labels in the train file. 
 We selected the lines where the event_code was 4100 or 4110: they correspond to the final events of game_session.
 Then we applied the groupby function to the event_session column.
 Finaly we counted the numbers of correct and incorrect attempts: the information is available in the event_data column: 
 if the string 'correct:true' is present  it's a success, if not it's a failure.
 
 Two main isues:
-	1. Into the lines with the 4100/4110 event_code there are still lines with no information about the results of the assesment in the event_data column.
+	1. Into the lines with the 4100/4110 event_code there are still lines with no information about the results of the assessment in the event_data column.
 	2. We have to predict on how many attemps every child will sucess an assignement. The issue is there are many game_session for one installation_id.
 	Moreover, is this best to make the prediction for every account and every type of game ? 
 
@@ -60,29 +60,28 @@ Fourth week :
 """""""""""""
 
 Some answers/ideas:
-	1. We are are going to predict the accuracy by child AND by game.
-	2. Given that a child can play to a same game several time, his gameplay is very informative so we must take it into account for instance by using a mean or a 
-		median ...
-	3. We oberved that the id_installation in the test are not in the train. 
-		The main objective is to predict the accuracy of a given assesment knowing what the child did before the assement (clips or videos)
+	1. For each child, we need to predict an accuracy by game. Then, depending on the assessment he's taking, we'd give the corresponding accuracy.
+	2. Given the fact that a child can play at the same game several times, we must take into account all his different attemps. For instance by using a mean, median or balanced mean of results over time...
+	3. We observed that the id_installation numbers in the test are not in the train. 
+		The main objective is to predict the accuracy of a given assessment knowing what the child did before this assessment (video clips or games)
 
 Do not forget to:
-	To remove from the train the children wo never pass an assesement (for all the 5 games).
+	Remove from the train the children who never took an assessment, because we won't be able to know his abilities.
 
 To do list
-	1. Finishing the make_lables function and make sure it's usefull. I t seems to be important we have to precisly determine WHY.
-	2. Writing a first version of the part of the report on the data structure to make things clearer. 
+	1. Finishing the make_labels function (which transform train into train_labels) and make sure it's usefull. It seems to be important but we have to precisely determine WHY.
+	2. Writing a first part of the report on the game, the data structure and the objectives to make things clearer. 
 	3. Data vizualisation:
 		a. By games (distributions)
 		b. By children (profils)
 		c. Games + children over time
-		d. Check correlations between games ? Can we make groups of games basing on how children pass or not tha assesments in each game
+		d. Check correlations between games ? Can we make groups of games basing on how children pass or not certain assessments.
 	4. Feature extraction: dealing with the information contained in the event_data
 
 Task assigned:
- 	Samuel Amoyal : Feature extraction
-	Emile Mardoc : Writing part
-	Thomas Marcoux Pepin: Data Vizualisation
-	Odélia Guedj : The make_labels function
+ 	- Samuel Amoyal 	: Feature extraction
+	- Emile Mardoc 		: Writing part
+	- Thomas Marcoux Pépin	: Data Vizualisation
+	- Odélia Guedj 		: The make_labels function
 
 
