@@ -89,8 +89,10 @@ Task assigned:
 Fifth week :
 """""""""""""
 
-We wrote an function able to transform the train into the train_labels. It's usefull for 2 main reasons:
+We wrote a function able to transform the train into the train_labels. It's usefull for 2 main reasons:
 	First it allows us to better understand the data 
 	Second we will have to apply this function to the test file: the goal of the competition is to predict the accuracy_group
 	of children for a random assignment given their previous activities. So we will have to extract the accuracy group for every assignment
 	done before the assignement chosen for prediction for every child.
+	
+A first section of the report was written. 
