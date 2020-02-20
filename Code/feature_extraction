@@ -1,0 +1,20 @@
+import pandas as pd
+import json
+
+def feature_extraction(input_df):
+    """
+    Extract keys and values from dict and store them in a DataFrame.
+    
+    input_df : Dataframe like train or test (intput)
+    df : DataFrame (output)
+    """
+    df = pd.DataFrame()
+    
+    for i in range(len(input_df)):
+        temp = pd.DataFrame(json.loads(input_df['event_data'][i]).items()).transpose()
+        temp.columns = temp.iloc[0]
+        temp = temp.drop([0])
+
+        df = pd.concat([df, temp], ignore_index=True)
+    
+    return df
