@@ -1,0 +1,52 @@
+def get_accuracy(data):
+    """
+    input: data
+    output: data_labels for each of the 5 games
+    """
+    
+    df = pd.DataFrame()
+    
+    games = ['Bird Measurer', 'Cart Balancer', 'Cauldron Filler', 'Chest Sorter', 'Mushroom Sorter']
+    
+    # Filtre parmis 1 des 5 jeux (game)
+    for game in games:
+        tmp = data[data['title'].str.contains(game)]
+        
+        # Filtre dernier event = assessment 4110/4100 (code)
+        if game == 'Bird Measurer':
+            tmp = tmp[tmp['event_code'] == 4110]
+        else:
+            tmp = tmp[tmp['event_code'] == 4100]
+    
+        # num_correct and num_incorrect
+        correct = ["NA" for i in range(np.shape(tmp)[0])]
+        incorrect = ["NA" for i in range(np.shape(tmp)[0])]
+        for i in range(np.shape(tmp)[0]):
+            if ('correct":false' in tmp.loc[tmp.index[i], 'event_data']):
+                correct[i] = 0
+                incorrect[i] = 1
+            elif ('correct":true' in tmp.loc[tmp.index[i], 'event_data']):
+                correct[i] = 1
+                incorrect[i] = 0
+            else:
+                correct[i] = 'NA'
+                incorrect[i] = 'NA'
+        tmp['num_correct'] = correct
+        tmp['num_incorrect'] = incorrect
+        tmp = pd.DataFrame(tmp.groupby(('installation_id','game_session','title')).sum())
+            
+        # accuracy
+        accuracy = tmp['num_correct'] / (tmp['num_correct'] + tmp['num_incorrect'])
+        tmp['accuracy'] = accuracy
+
+        # accuracy_group
+        tmp["accuracy_group"] = tmp["accuracy"].apply(lambda x: 0 if x==0 else (1 if x<0.5 else (2 if x<0.9 else 3)))
+        df = pd.concat([df, tmp])
+        
+    df = df.reset_index()[['game_session','installation_id','title','num_correct','num_incorrect','accuracy','accuracy_group']]
+    return(df)
+
+my_train_labels = get_accuracy(train)
+my_train_labels = my_train_labels.sort_values(['installation_id', 'game_session']).reset_index(drop=True)
+
+print(np.shape(my_train_labels), np.shape(train_labels))
