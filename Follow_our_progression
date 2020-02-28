@@ -96,3 +96,35 @@ We wrote a function able to transform the train into the train_labels. It's usef
 	done before the assignement chosen for prediction for every child.
 	
 A first section of the report was written. 
+
+
+
+"""""""""""""
+Sixth week :
+"""""""""""""
+
+Two main ideas where followed.
+
+The first is just to continue to write the report (Emile) by using Thomas' Data Visualization.
+
+The second is more complicated. Indeed, the function written by Samuel and Odélia to create the "train_labels" file by using "train" file works, but had to be improved.
+
+	1) A mistake was in the Kaggle subject and was found by other Data Scientists. 
+	Indeed, it was written that for the game "Bird", the code we have to use to find the "accuracy_group" is 4110, but sometimes it is 4100 too.
+	We have corrected it, so our "train_labels" is not exactly the same than the file given in Kaggle competition.
+	
+	2) The function now works with the "test" file too.
+	
+	3) For some "installation_id" in the "test" file, there are just few clips, activities and the assessment we have to predict. 
+	It means that we can't train only on "train_labels" because it only contains information about "assessment" and not about "clips","games" and "activities"
+	
+	4) The "assessment" we have to predict in the "test" file is the last of the assessments available, but it doesn't mean that it correspond to the last assessment made by a child.
+
+	5) To train a model by using the "train" file, we need to modify this file in order for it to be like the "test" file.
+	Because the main difference between these files is that in the "test" file, information about last assessment is missing, we have to truncate at least one "assessment" by "installation_id" int he "train" file.
+	
+TODO :
+
+	1) Continue Data Visualization and the report (Emile and Thomas)
+	2) Change "train" to be in the same format than "test" (Odélia and Emile)
+	3) After that, do a training and submit it on Kaggle (Samuel)
