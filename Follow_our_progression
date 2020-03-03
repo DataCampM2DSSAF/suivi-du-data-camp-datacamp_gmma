@@ -128,3 +128,18 @@ TODO :
 	1) Continue Data Visualization and the report (Emile and Thomas)
 	2) Change "train" to be in the same format than "test" (Odélia and Emile)
 	3) After that, do a training and submit it on Kaggle (Samuel)
+
+
+"""""""""""""
+Seventh week :
+"""""""""""""
+
+We have to change our previous plan.
+Indeed, Data Visualization is not necessary yet, because creating a function that changes "train" to get a data usable for training is more difficult than expected and takes a lot of time.
+Moreover, we can't do any training while we haven't done theses changes.
+Theses changes need two functions :
+	1) a truncation function, which transforms "train" to get it in the same format than "test" (i.e. with a missing assessment by "game_session")
+	2) a feature extraction function, which permits to get data usable by classic supervised learning functions or models, by transforming the truncated part of "train"
+	
+1) Odélia and Thomas
+2) Samuel and Emile
