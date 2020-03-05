@@ -9,7 +9,7 @@ Link to the Overleaf report:
 https://www.overleaf.com/read/xkncrrjpsrbw
 
 ### You can find different files in this GitHub :
-  - our codes which is updated regularly
+  - our code files which are regularly updated
   - a text file where you can find what we have done each week, with explanations of the code, the results of our discussions to know what to do next, the problems we had, what we tried to solve them, ...
   - this ReadMe
 
