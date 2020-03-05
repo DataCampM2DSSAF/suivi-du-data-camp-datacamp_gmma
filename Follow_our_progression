@@ -146,6 +146,7 @@ Theses changes need two functions :
 
 
 Truncation function done, multiple methods added: random asesssment, first or last assessment.
-To do : - add proportion method (keeping a certain rate of assesments for each installation_id).
+To do : - resolve the concatenation problem (last line of our function)
+	- add proportion method (keeping a certain rate of assesments for each installation_id).
 	- plot the distribution of the number of assessement kept (and the total number of assessment) by installation_id in the train and compare it to the test's 
-
+	
