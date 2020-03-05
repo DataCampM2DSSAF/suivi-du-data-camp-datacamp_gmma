@@ -150,3 +150,6 @@ To do : - resolve the concatenation problem (last line of our function)
 	- add proportion method (keeping a certain rate of assesments for each installation_id).
 	- plot the distribution of the number of assessement kept (and the total number of assessment) by installation_id in the train and compare it to the test's 
 	
+Probleme of the concatenation in the function solved (stupid mistake...)
+
+
