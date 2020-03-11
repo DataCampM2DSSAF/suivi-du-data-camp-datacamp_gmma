@@ -8,7 +8,7 @@ https://www.kaggle.com/c/data-science-bowl-2019/notebooks?sortBy=hotness&group=e
 Link to the Overleaf report:
 https://www.overleaf.com/read/xkncrrjpsrbw
 
-Link to Samuel's Kaggle notebook : 
+Link to Samuel's Kaggle public notebook : 
 https://www.kaggle.com/necrobs/data-camp
 
 ### You can find different files in this GitHub :
