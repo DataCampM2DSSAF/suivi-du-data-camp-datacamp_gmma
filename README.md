@@ -8,6 +8,9 @@ https://www.kaggle.com/c/data-science-bowl-2019/notebooks?sortBy=hotness&group=e
 Link to the Overleaf report:
 https://www.overleaf.com/read/xkncrrjpsrbw
 
+Link to Samuel's Kaggle notebook : 
+https://www.kaggle.com/necrobs/data-camp
+
 ### You can find different files in this GitHub :
   - our code files which are regularly updated
   - a text file where you can find what we have done each week, with explanations of the code, the results of our discussions to know what to do next, the problems we had, what we tried to solve them, ...
