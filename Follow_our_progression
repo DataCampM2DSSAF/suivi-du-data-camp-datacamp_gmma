@@ -153,3 +153,14 @@ To do : - resolve the concatenation problem (last line of our function)
 Probleme of the concatenation in the function solved (stupid mistake...)
 
 
+
+"""""""""""""
+Eighth week :
+"""""""""""""
+
+We are close to start supervised learning models, but we have only 8 days until the end of the project.
+
+The function which transforms the 'train' file to get another file usable for machine learning works.
+It gives a new csv file with only numbers on it, and more than 100 columns (variables).
+
+The last thing we have to do before training models is to get the accuracy for each assessment truncated in the file obtained from the truncation function applied to tre train file.
