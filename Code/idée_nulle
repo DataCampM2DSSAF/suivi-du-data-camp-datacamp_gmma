@@ -1,0 +1,18 @@
+def idee_nulle(data_labels, ids):
+    toto = [None]*len(ids)
+    cmt = 0
+    for i,item in enumerate(ids):
+        tmp = data_labels[data_labels['installation_id'] == item]['accuracy'].mean()
+        if tmp==0:
+            toto[i] = 0
+        elif tmp<0.5:
+            toto[i] = 1
+        elif tmp<0.9:
+            toto[i] = 2
+        elif tmp==1:
+            toto[i] = 3
+        else:
+            toto[i] = 0
+            cmt += 1
+    print('Il y a', cmt, 'installation_id sans rien dans le test_label')
+    return toto
